@@ -1,68 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title> My Personal Slambook </title>
-	<style>
-		img{
-			width: 428px;
-			height: 674px;
-			float: left;
-			margin-right:15px;
-		}
-h1   {color: indigo;}
-h2   {color: indigo;}
-	</style>
+  <meta charset="UTF-8">
+  <title>Music Recommendation </title>
+  <style>
+    body {
+      background-color: #FBF2E3;
+      background-size: cover;
+      backdrop-filter: blur(5px);
+      margin: 40px;
+      font-family: Helvetica, sans-serif;
+    }
+
+    .form-container {
+      background-color: #FBF2E3;
+      padding: 30px;
+      width: 500px;
+      margin: auto;
+  }
+
+    h2 {
+      text-align: center;
+      color: #050407;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .checkbox-group,
+    .radio-group {
+      margin-top: 5px;
+      display: inline-flex;
+    }
+
+    .checkbox-group label,
+    .radio-group label {
+      font-weight: normal;
+      margin-right: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #050407;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2A1E30;
+    }
+  </style>
 </head>
 <body>
 
-<h1> Hey there! :D </h1>
+  <div class="form-container">
+    <h2>Music Recommendation </h2>
+    
+    <h3> Directions </h3>
+    
+    <p> Fill out the following fields then click "Submit Recommendation" when you're finished! </p>
+    
+    <h3> Example: </h3>
+    
+    <img src="https://drive.google.com/file/d/1r_gAMuDTppLQ4dc-jC02DGznF5ZW8BOM/view?usp=drive_link">
+    
+    <br>
+    
+    <form>
+      <!-- Input Fields -->
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Type here..." required>
 
-<p> <img src="julius.png" alt="super pogi man" width="428" height="674"> A slam book is a notebook or journal passed around among friends or classmates where everyone writes personal information, answers fun questions, and shares thoughts or messages. It usually includes questions like name, birthday, favorites, dreams, and messages to the owner. Popular in schools, slam books are a fun way to learn more about each other and keep memories. </p>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" placeholder="Type here..." required>
 
-<br>
-<br
+      <!-- Textarea -->
+      <label for="movie">Recommended Music Title:</label>
+      <input type="text" id="movie" name="movie" placeholder="Type here..." required>
 
-<h2> Who am I? </h2>
+      <label for="reason">Why do you recommend it?</label>
+      <textarea id="reason" name="reason" rows="4" placeholder="Type here..." required></textarea>
+      <br>
+      <br>
 
-<ol>
-	<li>Name: Ethan Jedrick W. Valdes </li>
-	<li>Nickname: Bot (Do NOT call me that.) 
-		<dl>
-			<dt>"If you don't like your nickname, who coined it?"</dt>
-			<dd>Originally, my parents called me "putitoy", before it got shortened into "Bot".</dd>
-		</dl>
-	</li>
-	<li>Grade/Section: 9-Emerald </li>
-	<li>Zodiac Sign:  Scorpio </li>
-  	<li>Birthday: November 16, 2011 </li>
-  	<li>Describe yourself in one word: impatient. </li>
-  	<li>Motto in life: "If it beats a Jet2 holiday, then sure." </li>
-</ol>
+      <!-- Checkbox: Genres -->
+      <label>Genres (select all that apply):</label>
+      <div class="checkbox-group">
+        <input type="checkbox" id="pop" name="genre" value="pop">
+        <label for="action">Pop Music</label>
 
-<br>
+        <input type="checkbox" id="rap" name="genre" value="rap">
+        <label for="comedy">Rap</label>
 
-<h2> Okay, but what are my favorite things? </h2>
+        <input type="checkbox" id="jazz" name="genre" value="jazz">
+        <label for="drama">Jazz</label>
 
-<ul>
-	<li>Favorite color: Gray </li>
-	<li>Favorite food: Pancit Canton </li>
-	<li>Favorite book/book series: Magnus Chase and the Gods of Asgard </li>
-	<li>Favorite movie or TV show:  </li>
-  	<li>Favorite song: Chit Chat by Beach Weather </li>
-  	<li>Favorite sport or activity: Listening to music </li>
-  	<li>Favorite place to hang out: Our study room with the blinds closed, preferably also with the door closed. </li>
-</ul>
+        <input type="checkbox" id="rock" name="genre" value="rock">
+        <label for="fantasy">Rock</label>
 
-<br>
+        <input type="checkbox" id="metal" name="genre" value="metal">
+        <label for="sci-fi">Metal</label>
+      </div>
 
-<h2> My social media links! </h2>
+    <br>
+    <br>
 
-<ul class="c">  
-	<li> <a href="https://www.instagram.com/?hl=en" target="_blank" > Instagram </a> </li>
-	<li> <a href= "https://workspace.google.com/intl/en-US/gmail/"target="_blank" > Email </a> </li>
-</ul>
+      <!-- Select -->
+      <label for="platform">Where did you stream it?</label>
+      <select id="platform" name="platform" required>
+        <option value="">-- Select Platform --</option>
+        <option value="Netflix">Spotify</option>
+        <option value="Disney+">YouTube Music</option>
+        <option value="Cinema">Apple Music</option>
+        <option value="Amazon Prime">SoundCloud</option>
+      </select>
+    
+    <br>
+    <br>
 
-
+      <!-- Submit -->
+      <button type="submit">Submit Recommendation</button>
+    </form>
+  </div>
 
 </body>
 </html>
